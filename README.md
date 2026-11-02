@@ -22,7 +22,7 @@ Este é um projeto de sistema de Inventário desenvolvido em Java utilizando o f
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/taisdias76/Inventario.git
+   git clone https://github.com/taisdias-dev/Inventario.git
    cd Inventario
    ```
 
