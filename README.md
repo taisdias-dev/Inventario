@@ -1,14 +1,18 @@
 # Inventario
 
-Este é um projeto de sistema de Inventário desenvolvido em Java utilizando o framework Spring Boot. O objetivo é facilitar o gerenciamento de itens, categorias e movimentações de estoque, permitindo controle eficiente.
+Sistema para oficina mecânica e autopeças. Problema: controle de peças, consumo por ordem de serviço e fila de compras. Fase atual: Fase 0 (fundação); código existente é um protótipo e o escopo será definido na Fase 1 (discovery).
 
-## Funcionalidades
+## Status das funcionalidades
 
-- Cadastro, edição e remoção de itens do inventário
-- Categorização dos itens
-- Registro de entradas e saídas (movimentações de estoque)
-- Relatórios de estoque atual
-- API RESTful para integração com outros sistemas
+| Funcionalidade | Status |
+|---|---|
+| Categorias: cadastro e listagem | protótipo |
+| Produtos: cadastro e listagem | protótipo |
+| Fornecedores: cadastro e listagem | protótipo |
+| Controle de consumo por ordem de serviço | planejado |
+| Fila de compras | planejado |
+
+**protótipo:** existe no código atual, não é compromisso de produto e será revisto na Fase 1. **planejado:** faz parte da visão do projeto e ainda não existe.
 
 ## Tecnologias Utilizadas
 
@@ -64,24 +68,31 @@ Inventario/
 ### Cadastro de Item
 
 ```json
-POST /api/itens
+POST /api/product
 {
-  "nome": "Notebook Dell",
-  "categoria": "Eletrônicos",
-  "quantidade": 10,
-  "descricao": "Notebook para uso administrativo"
+   "name": "Jogo de Pastilhas de Freio Dianteiro",
+   "description": "Jogo de pastilhas de freio dianteiro (cerâmica)",
+   "price": 150.00,
+   "quantity": 10,
+   "category": "Frenagem",
 }
 ```
 
-### Movimentação de Estoque
+### Cadastro de Categoria
 
 ```json
-POST /api/movimentacoes
+POST /api/category
 {
-  "itemId": 1,
-  "tipo": "SAIDA",
-  "quantidade": 2,
-  "observacao": "Saída para manutenção"
+  "category": "Frenagem"
+}
+```
+
+### Cadastro de Fornecedor
+
+```json
+POST /api/supplier
+{
+  "name": "Fras-le"
 }
 ```
 
