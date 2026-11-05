@@ -1,14 +1,20 @@
 # Inventario
 
-Este é um projeto de sistema de Inventário desenvolvido em Java utilizando o framework Spring Boot. O objetivo é facilitar o gerenciamento de itens, categorias e movimentações de estoque, permitindo controle eficiente.
+Sistema para oficina mecânica e autopeças. Problema: controle de peças, consumo por ordem de serviço e fila de compras. Fase atual: base funcional em evolução, com cadastro e consulta de produtos, categorias e fornecedores.
 
-## Funcionalidades
+## Status das funcionalidades
 
-- Cadastro, edição e remoção de itens do inventário
-- Categorização dos itens
-- Registro de entradas e saídas (movimentações de estoque)
-- Relatórios de estoque atual
-- API RESTful para integração com outros sistemas
+| Funcionalidade | Status |
+| --- | --- |
+| Cadastro de categoria | implementado |
+| Listagem de categorias | implementado |
+| Cadastro de produto | implementado |
+| Listagem de produtos | implementado |
+| Cadastro de fornecedor | implementado |
+| Listagem de fornecedores | implementado |
+| Controle de consumo por ordem de serviço | planejado |
+| Fila de compras | planejado |
+| Integração com ERP/CRM | fora de escopo |
 
 ## Tecnologias Utilizadas
 
@@ -66,10 +72,10 @@ Inventario/
 ```json
 POST /api/itens
 {
-  "nome": "Notebook Dell",
-  "categoria": "Eletrônicos",
+  "nome": "Jogo de Pastilhas de Freio Dianteiro",
+  "categoria": "Frenagem",
   "quantidade": 10,
-  "descricao": "Notebook para uso administrativo"
+  "descricao": "Jogo de pastilhas de freio dianteiro (cerâmica)"
 }
 ```
 
@@ -80,8 +86,8 @@ POST /api/movimentacoes
 {
   "itemId": 1,
   "tipo": "SAIDA",
-  "quantidade": 2,
-  "observacao": "Saída para manutenção"
+  "quantidade": 1,
+  "observacao": "Peça aplicada no veículo Placa ABC-1234 conforme O.S. 5678"
 }
 ```
 
