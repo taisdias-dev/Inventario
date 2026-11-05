@@ -1,20 +1,18 @@
 # Inventario
 
-Sistema para oficina mecânica e autopeças. Problema: controle de peças, consumo por ordem de serviço e fila de compras. Fase atual: base funcional em evolução, com cadastro e consulta de produtos, categorias e fornecedores.
+Sistema para oficina mecânica e autopeças. Problema: controle de peças, consumo por ordem de serviço e fila de compras. Fase atual: Fase 0 (fundação); código existente é um protótipo e o escopo será definido na Fase 1 (discovery).
 
 ## Status das funcionalidades
 
 | Funcionalidade | Status |
-| --- | --- |
-| Cadastro de categoria | implementado |
-| Listagem de categorias | implementado |
-| Cadastro de produto | implementado |
-| Listagem de produtos | implementado |
-| Cadastro de fornecedor | implementado |
-| Listagem de fornecedores | implementado |
+|---|---|
+| Categorias: cadastro e listagem | protótipo |
+| Produtos: cadastro e listagem | protótipo |
+| Fornecedores: cadastro e listagem | protótipo |
 | Controle de consumo por ordem de serviço | planejado |
 | Fila de compras | planejado |
-| Integração com ERP/CRM | fora de escopo |
+
+**protótipo:** existe no código atual, não é compromisso de produto e será revisto na Fase 1. **planejado:** faz parte da visão do projeto e ainda não existe.
 
 ## Tecnologias Utilizadas
 
@@ -70,24 +68,31 @@ Inventario/
 ### Cadastro de Item
 
 ```json
-POST /api/itens
+POST /api/product
 {
-  "nome": "Jogo de Pastilhas de Freio Dianteiro",
-  "categoria": "Frenagem",
-  "quantidade": 10,
-  "descricao": "Jogo de pastilhas de freio dianteiro (cerâmica)"
+   "name": "Jogo de Pastilhas de Freio Dianteiro",
+   "description": "Jogo de pastilhas de freio dianteiro (cerâmica)",
+   "price": 150.00,
+   "quantity": 10,
+   "category": "Frenagem",
 }
 ```
 
-### Movimentação de Estoque
+### Cadastro de Categoria
 
 ```json
-POST /api/movimentacoes
+POST /api/category
 {
-  "itemId": 1,
-  "tipo": "SAIDA",
-  "quantidade": 1,
-  "observacao": "Peça aplicada no veículo Placa ABC-1234 conforme O.S. 5678"
+  "category": "Frenagem"
+}
+```
+
+### Cadastro de Fornecedor
+
+```json
+POST /api/supplier
+{
+  "name": "Fras-le"
 }
 ```
 
