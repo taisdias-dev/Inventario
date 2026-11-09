@@ -16,38 +16,76 @@ Sistema para oficina mecânica e autopeças. Problema: controle de peças, consu
 
 ## Tecnologias Utilizadas
 
-- **Java 17+**
-- **Spring Boot** (Web, Data JPA)
-- **Banco de Dados**: H2 (padrão, fácil substituição por MySQL, PostgreSQL, etc)
-- **Maven** para gerenciamento de dependências
+- **Java 17**
+- **Spring Boot 3.3.5** (Spring Web e Spring Data JPA)
+- **Banco em memória padrão**: H2; o projeto também declara o driver JDBC do PostgreSQL
 - **Lombok** para redução de boilerplate
+- **Maven Wrapper** para compilar e executar sem instalar Maven separadamente
 
 ## Como Executar
 
+### Pré-requisitos
+
+- JDK 17 instalado (`java -version` deve indicar a versão 17).
+- Git para clonar o repositório.
+- Não é necessário instalar Maven: use o Maven Wrapper incluído no projeto.
+
+### Passos
+
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/taisdias76/Inventario.git
+   git clone https://github.com/taisdias-dev/Inventario.git
    cd Inventario
    ```
 
-2. **Configure o banco de dados** (opcional):  
-   Por padrão, o projeto utiliza o banco de dados H2 em memória. Para usar outro banco, edite o arquivo `application.properties`.
+2. **Compile e execute os testes:**
 
-3. **Compile o projeto:**
+   Linux/macOS:
    ```bash
-   mvn clean install
+   ./mvnw clean verify
    ```
 
-4. **Execute a aplicação:**
+   Windows (Prompt de Comando):
    ```bash
-   mvn spring-boot:run
+   mvnw.cmd clean verify
    ```
 
-5. **Acesse a aplicação:**
-   - API: `http://localhost:8080`
-   - (Opcional) Swagger: `http://localhost:8080/swagger-ui.html`
+   Windows (PowerShell):
+   ```powershell
+   .\mvnw.cmd clean verify
+   ```
 
-## Estrutura do Projeto
+3. **Inicie a aplicação:**
+
+   Linux/macOS:
+   ```bash
+   ./mvnw spring-boot:run
+   ```
+
+   Windows (Prompt de Comando):
+   ```bash
+   mvnw.cmd spring-boot:run
+   ```
+
+   Windows (PowerShell):
+   ```powershell
+   .\mvnw.cmd spring-boot:run
+   ```
+
+4. **Verifique a listagem de produtos** (protótipo). Com a aplicação em execução:
+   ```bash
+   curl.exe -i http://localhost:8080/api/products
+   ```
+
+   Resposta esperada em uma instalação nova:
+   ```http
+   HTTP/1.1 200
+   Content-Type: application/json
+
+   []
+   ```
+
+### Estrutura do Projeto
 
 ```
 Inventario/
