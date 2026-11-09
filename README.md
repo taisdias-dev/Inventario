@@ -33,7 +33,7 @@ Sistema para oficina mecânica e autopeças. Problema: controle de peças, consu
 ### Passos
 
 1. **Clone o repositório:**
-   ```bash
+   ```console
    git clone https://github.com/taisdias-dev/Inventario.git
    cd Inventario
    ```
@@ -41,12 +41,12 @@ Sistema para oficina mecânica e autopeças. Problema: controle de peças, consu
 2. **Compile e execute os testes:**
 
    Linux/macOS:
-   ```bash
+   ```console
    ./mvnw clean verify
    ```
 
    Windows (Prompt de Comando):
-   ```bash
+   ```console
    mvnw.cmd clean verify
    ```
 
@@ -58,12 +58,12 @@ Sistema para oficina mecânica e autopeças. Problema: controle de peças, consu
 3. **Inicie a aplicação:**
 
    Linux/macOS:
-   ```bash
+   ```console
    ./mvnw spring-boot:run
    ```
 
    Windows (Prompt de Comando):
-   ```bash
+   ```console
    mvnw.cmd spring-boot:run
    ```
 
@@ -73,8 +73,8 @@ Sistema para oficina mecânica e autopeças. Problema: controle de peças, consu
    ```
 
 4. **Verifique a listagem de produtos** (protótipo). Com a aplicação em execução:
-   ```bash
-   curl.exe -i http://localhost:8080/api/products
+   ```console
+   curl -i http://localhost:8080/api/products
    ```
 
    Resposta esperada em uma instalação nova:
@@ -85,7 +85,7 @@ Sistema para oficina mecânica e autopeças. Problema: controle de peças, consu
    []
    ```
 
-### Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 Inventario/
@@ -100,47 +100,6 @@ Inventario/
  ├── pom.xml
  └── README.md
 ```
-
-## Exemplos de Uso
-
-### Cadastro de Item
-
-```json
-POST /api/product
-{
-   "name": "Jogo de Pastilhas de Freio Dianteiro",
-   "description": "Jogo de pastilhas de freio dianteiro (cerâmica)",
-   "price": 150.00,
-   "quantity": 10,
-   "category": "Frenagem",
-}
-```
-
-### Cadastro de Categoria
-
-```json
-POST /api/category
-{
-  "category": "Frenagem"
-}
-```
-
-### Cadastro de Fornecedor
-
-```json
-POST /api/supplier
-{
-  "name": "Fras-le"
-}
-```
-
-## Contribuição
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
-
-## Licença
-
-Este projeto está licenciado sob a licença MIT.
 
 ---
 
